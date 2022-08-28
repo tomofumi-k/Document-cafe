@@ -1,0 +1,134 @@
+// セクションのテキストグループコンポーネント
+@mixin txt-group($state, $ttl-font-size) {
+    .#{$state}-ttl {
+      font-size: $ttl-font-size;
+      font-weight: bold;
+    }
+    .#{$state}-sub-ttl {
+      font-size: 20px;
+      margin-top: 8px;
+    }
+    .#{$state}-txt {
+      margin-top: 32px;
+      line-height: 32px;
+    }
+}
+
+.top {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  @include mq-down(md){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &:before {
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(/asset/top/top-image.jpg);
+    filter: brightness(40%);
+    z-index: -1;
+  }
+  .top-txt-group {
+    display: grid;
+    row-gap: 16px;
+    color: $white;
+    padding: 300px 0px 0px 100px;
+    transition: 1.0s;
+    @include mq-down(md){
+      padding: 0px;
+      text-align: center;
+    }
+    .top-ttl{
+      font-size: 64px;
+      font-weight: bold;
+      opacity: 0;
+      @include mq-down(md){
+        font-size: 48px;
+      }
+    }
+    .top-txt {
+      font-size: 24px;
+      opacity: 0;
+    }
+  }
+}
+
+.concept {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .concept-img {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    filter: brightness(40%);
+    object-fit: cover;
+  }
+  .concept-txtbox {
+    display: inline-block;
+    position: absolute;
+    z-index: 2;
+    @include txt-group(concept, 56px);
+  }
+}
+
+.obsession { 
+  display: grid;
+  grid-template-areas: 
+  "coffee ."
+  ". obsession"
+  ;
+  width: 100vw;
+  margin-top: 120px;
+  .coffee {
+    grid-area: coffee;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 560px;
+    background: $bg-color;
+    padding: 104px 80px;
+    @include txt-group(coffee, 40px);
+    .coffee-img {
+      position: absolute;
+      top: 124px;
+      left: 840px;
+      width: 100%;
+      max-width: 560px;
+    }
+  }
+  .obsession-section {
+    grid-area: obsession;
+    margin-top: 80px;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 560px;
+    background: $bg-color;
+    padding: 200px 0px 0px 240px;
+    @include txt-group(obsession, 40px);
+    .obsession-img {
+      position: absolute;
+      top: 56px;
+      right: 840px;
+      width: 100%;
+      max-width: 560px;
+    }
+  }
+}
+
+.menu{
+  margin: 120px auto 0px auto;
+  width: 100vw;
+  max-width: 1200px;
+  color: $txt-color;
+  .menu-ttl {
+    text-align: center;
+  }
+}
