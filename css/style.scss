@@ -1,8 +1,11 @@
-// base
+// foundation
 @import "./foundation/base";
 @import "./foundation/breakpoint";
 @import "./foundation/color";
 
-// main
+// utility
+@import "./utility/animation";
+
+// layout
 @import "./main";
 
