@@ -1,2 +1,9 @@
-*.scss
+
+/css/foundation
+/css/layout
+/css/utility
+/css/utility
 /node_modules
+
+*.scss
+*.gitignore
