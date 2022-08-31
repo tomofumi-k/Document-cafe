@@ -1,9 +1,7 @@
 
-/css/foundation
-/css/layout
-/css/utility
-/css/utility
-/node_modules
+bin/foundation
+bin/layout
+bin/utility
 
-*.scss
-*.gitignore
+# scss
+# gitignore
