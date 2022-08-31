@@ -3,5 +3,5 @@ foundation/
 layout/
 utility/
 
-# scss
+*.scss
 # gitignore
